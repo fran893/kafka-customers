@@ -1,11 +1,11 @@
 package com.kafka.example.customers.application;
 
-import com.kafka.example.customers.domain.Customer;
-import com.kafka.example.customers.domain.events.CustomerCreatedEvent;
-import com.kafka.example.customers.domain.events.Event;
-import com.kafka.example.customers.domain.events.EventType;
 import com.kafka.example.customers.infra.port.out.MessagingBroker;
 import com.kafka.example.customers.infra.port.out.MessagingEvent;
+import com.kafka.example.events.domain.Customer;
+import com.kafka.example.events.domain.CustomerCreatedEvent;
+import com.kafka.example.events.domain.Event;
+import com.kafka.example.events.domain.EventType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;

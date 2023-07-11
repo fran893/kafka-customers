@@ -1,6 +1,6 @@
 package com.kafka.example.customers.infra.adapter.out.persistance;
 
-import com.kafka.example.customers.domain.Customer;
+import com.kafka.example.events.domain.Customer;
 import org.springframework.stereotype.Component;
 
 @Component

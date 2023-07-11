@@ -1,10 +1,10 @@
 package com.kafka.example.customers.application;
 
-import com.kafka.example.customers.domain.Customer;
 import com.kafka.example.customers.infra.adapter.out.persistance.CustomerEntity;
 import com.kafka.example.customers.infra.adapter.out.persistance.IMapper;
 import com.kafka.example.customers.infra.port.in.CustomerPort;
 import com.kafka.example.customers.infra.port.out.CustomerRepository;
+import com.kafka.example.events.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

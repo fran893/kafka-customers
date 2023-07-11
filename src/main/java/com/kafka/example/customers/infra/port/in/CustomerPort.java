@@ -1,7 +1,7 @@
 package com.kafka.example.customers.infra.port.in;
 
-import com.kafka.example.customers.domain.Customer;
 import com.kafka.example.customers.infra.adapter.out.persistance.CustomerEntity;
+import com.kafka.example.events.domain.Customer;
 
 import java.util.List;
 

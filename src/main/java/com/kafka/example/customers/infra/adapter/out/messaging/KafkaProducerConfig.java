@@ -1,8 +1,7 @@
 package com.kafka.example.customers.infra.adapter.out.messaging;
 
-
-import com.kafka.example.customers.domain.events.Event;
 import com.kafka.example.customers.infra.port.out.MessagingBroker;
+import com.kafka.example.events.domain.Event;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;

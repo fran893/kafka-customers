@@ -1,7 +1,7 @@
 package com.kafka.example.customers.infra.adapter.in.web;
 
-import com.kafka.example.customers.domain.Customer;
 import com.kafka.example.customers.infra.port.in.CustomerPort;
+import com.kafka.example.events.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
