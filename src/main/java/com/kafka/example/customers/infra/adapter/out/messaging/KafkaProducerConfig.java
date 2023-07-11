@@ -1,6 +1,6 @@
 package com.kafka.example.customers.infra.adapter.out.messaging;
 
-import com.fasterxml.jackson.databind.JsonSerializer;
+
 import com.kafka.example.customers.domain.events.Event;
 import com.kafka.example.customers.infra.port.out.MessagingBroker;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +18,7 @@ import java.util.Map;
 @Configuration
 public class KafkaProducerConfig implements MessagingBroker<ProducerFactory<String, Event<?>>, KafkaTemplate<String, Event<?>>> {
 
-    private final String bootstrapAddress = "localhost:9092";
+    private final String bootstrapAddress = "localhost:29092";
 
     @Bean
     @Override
