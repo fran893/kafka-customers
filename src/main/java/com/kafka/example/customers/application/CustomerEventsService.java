@@ -10,10 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
+@Service
 public class CustomerEventsService implements MessagingEvent<Customer> {
 
     private MessagingBroker<ProducerFactory<String, Event<?>>, KafkaTemplate<String, Event<?>>> kafkaBroker;

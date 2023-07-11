@@ -16,11 +16,14 @@ public class CustomerService implements CustomerPort {
 
     private CustomerRepository customerRepository;
     private IMapper<Customer, CustomerEntity> mapper;
+    private CustomerEventsService customerEventsService;
 
     @Autowired
-    public CustomerService(CustomerRepository customerRepository, IMapper<Customer, CustomerEntity> mapper) {
+    public CustomerService(CustomerRepository customerRepository, IMapper<Customer, CustomerEntity> mapper,
+                           CustomerEventsService customerEventsService) {
         this.customerRepository = customerRepository;
         this.mapper = mapper;
+        this.customerEventsService = customerEventsService;
     }
 
 
@@ -38,6 +41,8 @@ public class CustomerService implements CustomerPort {
     @Override
     public void saveCustomer(Customer customer) {
         CustomerEntity customerEntity = mapper.domainToEntity(customer);
+
+        customerEventsService.publish(customer);
 
         customerRepository.save(customerEntity);
     }
