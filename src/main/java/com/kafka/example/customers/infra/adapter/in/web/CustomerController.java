@@ -5,9 +5,7 @@ import com.kafka.example.customers.infra.port.in.CustomerPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +23,11 @@ public class CustomerController {
     @GetMapping(value = "/customers")
     public ResponseEntity<List<Customer>> getCustomers() {
         return new ResponseEntity<>(customerPort.getCustomers(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/customer")
+    public void saveCustomer(@RequestBody Customer customer) {
+        customerPort.saveCustomer(customer);
     }
 
 }
